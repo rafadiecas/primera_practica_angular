@@ -1,0 +1,16 @@
+<div class="contenedor">
+  <div class="productos">
+    <div *ngFor="let producto of productos" class="producto">
+      <p>{{ producto.nombre }} - {{ producto.precio | currency }}</p>
+      <button (click)="agregarProducto(producto)">+</button>
+      <button (click)="quitarProducto(producto)">-</button>
+    </div>
+  </div>
+  <div class="ticket">
+    <h3>Ticket de la compra</h3>
+    <div *ngFor="let producto of productos" class="producto-ticket" [ngClass]="{'oculto': producto.cantidad <= 0}">
+      <p>{{ producto.nombre }} - {{ producto.cantidad }} x {{ producto.precio | currency }} = {{ producto.cantidad * producto.precio | currency }}</p>
+    </div>
+    <h4>Total: {{ tot | currency }}</h4>
+  </div>
+</div>

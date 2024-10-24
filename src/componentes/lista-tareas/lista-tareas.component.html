@@ -1,0 +1,7 @@
+<input id="tarea" type="text" style="margin-top: 10px">
+<button (click)="agregaTarea()">agrega</button>
+<ul>
+  <li *ngFor="let tarea of tareas">
+    {{ tarea }}
+  </li>
+</ul>
